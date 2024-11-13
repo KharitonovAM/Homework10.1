@@ -91,6 +91,13 @@ filter_by_state(test_list, 'CANCELED')
 '''
 help(name_of_function)
 '''
+## Тестирование
+Для тестирования работы функций используйте pytest, все функции находятся в дирректрии test
+'''
+pytest
+'''
+Все функции в программе протестированы на выполнение заданного функционала
+
 
 ## Лицензия
 Python Software Foundation License (PSFL)
