@@ -1,16 +1,12 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from src.widget import mask_account_card
+from src.widget import get_date
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print(mask_account_card('счет 123232121323232'))
+    print(mask_account_card('карта 123232121323232'))
+    print(mask_account_card('счет 123232121323232'))
+    print(get_date('11.08/2024'))
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
