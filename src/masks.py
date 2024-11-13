@@ -20,7 +20,7 @@ def get_mask_card_number(number_card: Union[int, str]) -> str:
     for index in range(0, len(number_card_asterix) + 1, 4):
         mask_card.append(number_card_asterix[start_index_of_interval:index])
         start_index_of_interval = index
-    return " ".join(mask_card)
+    return " ".join(mask_card[1:])
 
 
 def get_mask_account(accaut_number: Union[int, str]) -> str:
