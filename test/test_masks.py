@@ -13,5 +13,5 @@ def test_get_mask_card_number(data, result):
     assert get_mask_card_number(data) == result
 
 
-def test_get_mask_card_number(make_rand_card_number):
+def test_get_mask_card_number1(make_rand_card_number):
     assert get_mask_card_number(make_rand_card_number)
