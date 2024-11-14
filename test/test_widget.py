@@ -11,7 +11,7 @@ from src.widget import get_date, mask_account_card
     ],
 )
 def test_mask_account_card(date, result):
-    mask_account_card(date) == result
+    assert mask_account_card(date) == result
 
 
 def test_mask_account_card1():
@@ -29,4 +29,4 @@ def test_mask_account_card1():
     ],
 )
 def test_get_date(data, result):
-    get_date(data) == result
+    assert get_date(data) == result
