@@ -10,8 +10,6 @@ if __name__ == '__main__':
     print(mask_account_card('счет 123232121323232'))
     print(get_date('11.08/2024'))
 
-    print(sort_by_date(
-        [{}]
-    ))
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
