@@ -2,7 +2,7 @@ from typing import Union
 def filter_by_currency(tansactions_list:list[dict[any:any]], currency:str)->list[dict[any:any]]:
     '''Возвращет итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной'''
 
-
+    return filter(lambda transaction: transaction["operationAmount"]["currency"]["name"] == currency, tansactions_list)
 
 
 
