@@ -14,7 +14,5 @@ def transaction_descriptions(transactions):
 def card_number_generator(start_data,end_data):
     '''выдает номера банковских карт в аданном диапазоне от 0000 0000 0000 0001 до 9999 9999 9999 9999.
     Принимает начальное и конечное значения для генерации диапазона номеров'''
-    pass
-
-
-
+    kard_number = ['0' * (16 - len(str(i))) + str(i) for i in range(start_data, end_data + 1)]
+    return [' '.join([item[index - 4:index] for index in range(4, 17, 4)]) for item in kard_number]
