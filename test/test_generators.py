@@ -50,3 +50,11 @@ def test_raises_value_filter_by_currency(wrong_data):
 def test_raises_value_transaction(wrong_data):
     with pytest.raises(TypeError):
         next(transaction_descriptions(wrong_data))
+
+
+def test_card_number_generator_main_function(card_dannie_info):
+    test_card_number = card_number_generator(card_dannie_info[0][0], card_dannie_info[0][1])
+    test_list = []
+    for i in range (card_dannie_info[0][1]):
+        test_list.append(test_card_number)
+    assert card_dannie_info[1]
