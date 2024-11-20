@@ -1,7 +1,6 @@
 from typing import Any
 
 
-
 def filter_by_currency(
     transactions_list: list[dict[Any, Any]], currency: str
 ) -> dict[Any, Any]:
@@ -15,7 +14,7 @@ def filter_by_currency(
 
 
 def transaction_descriptions(transactions):
-    '''def transaction_descriptions(transactions: list[dict[str, str]]) -> Generator[str]:'''
+    """def transaction_descriptions(transactions: list[dict[str, str]]) -> Generator[str]:"""
     """принимает список словарей с транзакциями и возвращает по очереди описание каждой операции"""
     for item in transactions:
         yield item["description"]
