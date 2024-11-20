@@ -8,7 +8,7 @@ def filter_by_currency(tansactions_list:list[dict[any:any]], currency:str)->list
 
 def transaction_descriptions(transactions):
     '''принимает список словарей с транзакциями и возвращает по очереди описание каждой операции'''
-    pass
+    return (x['description'] for x in transactions)
 
 
 def card_number_generator(start_data,end_data):

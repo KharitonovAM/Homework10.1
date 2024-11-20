@@ -42,6 +42,7 @@ def make_generator_filter_list():
        }
 ]
 
+@pytest.fixture
 def make_long_generator_filter_list():
     return [{
           "id": 939719570,
