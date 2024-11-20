@@ -64,3 +64,8 @@ def test_card_number_generator_main_function(card_dannie_info):
 def test_card_number_generator_critical_data(start, end):
     with pytest.raises(ValueError):
         card_number_generator(start, end)
+
+@pytest.mark.parametrize('start, end',[('sfsdf', 10000),(14,[1010]),({'ffsdf':'111','fdsf':123}, 78778885)])
+def test_card_number_type_error(start, end):
+    with pytest.raises(TypeError):
+        card_number_generator(start, end)
