@@ -29,3 +29,10 @@ def test_transaction_base_functions(make_generator_filter_list):
     for i in range(2):
         test_list.append(next(test_transaction_descriptions))
     assert test_list == ["Перевод организации", "Перевод со счета на счет"]
+
+
+def test_transaction_mistake_iterations(make_generator_filter_list):
+    test_transaction_descriptions = transaction_descriptions(make_generator_filter_list)
+    with pytest.raises(StopIteration):
+        for i in range(12):
+            next(test_transaction_descriptions)
