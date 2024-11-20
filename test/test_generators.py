@@ -58,3 +58,9 @@ def test_card_number_generator_main_function(card_dannie_info):
     for i in range (card_dannie_info[0][1]):
         test_list.append(test_card_number)
     assert card_dannie_info[1]
+
+
+@pytest.mark.parametrize('start, end',[(-10, 10000),(14,10000000000000000000000000)])
+def test_card_number_generator_critical_data(wrong_data):
+    with pytest.raises(ValueError):
+        card_number_generator(wrong_data)
