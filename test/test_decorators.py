@@ -33,33 +33,39 @@ def test_capsys_log_decorator(capsys: CaptureFixture[str]) -> None:
     assert captured.out == "0\nminus_number ok\n"
 
 
-def test_capsys_error_decorator(capsys : CaptureFixture[str]) -> None:
+def test_capsys_error_decorator(capsys: CaptureFixture[str]) -> None:
     @log()
     def add_number(a, b, c):
         return a + b + c
 
-    add_number(3, 4, 'u')
+    add_number(3, 4, "u")
     capture = capsys.readouterr()
-    assert capture.out == """add_number error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (3, 4, 'u'), {}\n"""
+    assert (
+        capture.out
+        == """add_number error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (3, 4, 'u'), {}\n"""
+    )
 
 
 def test_write_to_file():
-    @log('test_log.txt')
+    @log("test_log.txt")
     def mytest_add_number(a, b):
         return a + b
 
     mytest_add_number(5, 8)
-    with open('test_log.txt', 'r') as f:
+    with open("test_log.txt", "r") as f:
         test_data = f.readlines()
-    assert test_data[-1] == 'mytest_add_number ok\n'
+    assert test_data[-1] == "mytest_add_number ok\n"
 
 
 def test_write_error_to_file():
-    @log('test_log.txt')
+    @log("test_log.txt")
     def mytest_add_number(a, b):
         return a + b
 
-    mytest_add_number(5, ['123', '123'])
-    with open('test_log.txt', 'r') as f:
+    mytest_add_number(5, ["123", "123"])
+    with open("test_log.txt", "r") as f:
         test_data = f.readlines()
-    assert test_data[-1] == '''mytest_add_number error: unsupported operand type(s) for +: 'int' and 'list'. Inputs: (5, ['123', '123']), {}\n'''
+    assert (
+        test_data[-1]
+        == """mytest_add_number error: unsupported operand type(s) for +: 'int' and 'list'. Inputs: (5, ['123', '123']), {}\n"""
+    )

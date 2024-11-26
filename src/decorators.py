@@ -21,5 +21,7 @@ def log(filename: str = ""):
                         f.write(result + "\n")
                 else:
                     print(result)
+
         return wrapper
+
     return decorator
