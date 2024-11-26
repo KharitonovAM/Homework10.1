@@ -5,9 +5,11 @@ def log(filename = ''):
         def wrapper(*args,**kwargs):
             try:
                 func(*args, **kwargs)
-                result  = f'{func.__name__} ok'
+                result = f'{func.__name__} ok'
             except Exception as e:
-                result = f'{func.__name__} error: {e}. Inputs: {*rags, **kwargs}'
+                x = arg_func()
+                a, k = (x[0] if len(x) else []), (x[1] if len(x) > 1 else {})
+                result = f'{func.__name__} error: {e}. Inputs: {a}, {k}'
             if filename:
                 with open(filename,'a') as f:
                     f.write(result)
