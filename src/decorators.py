@@ -8,13 +8,19 @@ def log(filename: str = ""):
             try:
                 func(*args, **kwargs)
                 result = f"{func.__name__} ok"
+                if filename:
+                    with open(filename, "a") as f:
+                        f.write(result + "\n")
+                else:
+                    print(result)
+                return result
             except Exception as e:
                 result = f"{func.__name__} error: {e}. Inputs: {args}, {kwargs}"
-            if filename:
-                with open(filename, "a") as f:
-                    f.write(result + "\n")
-            else:
-                print(result)
+                if filename:
+                    with open(filename, "a") as f:
+                        f.write(result + "\n")
+                else:
+                    print(result)
 
         return wrapper
 
