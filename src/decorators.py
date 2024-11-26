@@ -7,13 +7,29 @@ def log(filename = ''):
                 func(*args, **kwargs)
                 result = f'{func.__name__} ok'
             except Exception as e:
-                x = arg_func()
-                a, k = (x[0] if len(x) else []), (x[1] if len(x) > 1 else {})
-                result = f'{func.__name__} error: {e}. Inputs: {a}, {k}'
+                result = f'{func.__name__} error: {e}. Inputs: {args}, {kwargs}'
             if filename:
                 with open(filename,'a') as f:
-                    f.write(result)
+                    f.write(result+'\n')
             else:
                 print(result)
+            #return func(*args, **kwargs)
         return wrapper
     return decorator
+
+
+@log('test_log.txt')
+def sum(a,b):
+    return a+b
+
+z = sum(5,8)
+
+
+@log('bad_test.txt')
+def dived(a,b):
+    return a/b
+
+l = dived(5,1)
+
+l = dived(5,0)
+
