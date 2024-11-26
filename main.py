@@ -2,6 +2,7 @@ from src.widget import mask_account_card
 from src.widget import get_date
 from src.processing import sort_by_date
 from src.generators import transaction_descriptions, filter_by_currency
+from src.decorators import log
 
 z = [{
           "id": 939719570,
@@ -48,3 +49,9 @@ if __name__ == '__main__':
     l = transaction_descriptions(z)
     print(next(l))
     print(next(l))
+
+@log()
+def my_summ(a, b, c):
+    return a+b+c
+
+z = my_summ(1,1,'u')
