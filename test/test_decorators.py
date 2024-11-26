@@ -37,7 +37,7 @@ def test_capsys_error_decorator(capsys: CaptureFixture[str]) ->None:
     @log()
     def add_number(a, b, c):
         result = a + b + c
-        return result
+
 
     test_result = add_number(3, 4, 'u')
     capture = capsys.readouterr()
