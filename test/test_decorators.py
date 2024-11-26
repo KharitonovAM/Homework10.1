@@ -28,6 +28,17 @@ def test_capsys_log_decorator(capsys: CaptureFixture[str]) -> None:
         print(result)
         return result
 
-    minus_number(100, 50, 30, 20)
+    test_result = minus_number(100, 50, 30, 20)
     captured = capsys.readouterr()
     assert captured.out == "0\nminus_number ok\n"
+
+
+def test_capsys_error_decorator(capsys: CaptureFixture[str]) ->None:
+    @log()
+    def add_number(a, b, c):
+        result = a + b + c
+        return result
+
+    test_result = add_number(3, 4, 'u')
+    capture = capsys.readouterr()
+    assert capture.out =="""add_number error: unsupported operand type(s) for +: 'int' and 'str'. Inputs: (3, 4, 'u'), {}\n"""
