@@ -9,7 +9,7 @@ def test_log_decorator() -> None:
         return a + b
 
     add_number(5, 7)
-    assert 'add_number ok'
+    assert "add_number ok"
 
 
 def test_log_decorator_with_bad_data() -> None:
@@ -18,7 +18,7 @@ def test_log_decorator_with_bad_data() -> None:
         return a / b
 
     divide_number(5, 0)
-    assert 'divide_number error: division by zero. Inputs: (5, 0), {}'
+    assert "divide_number error: division by zero. Inputs: (5, 0), {}"
 
 
 def test_capsys_log_decorator(capsys: CaptureFixture[str]) -> None:
@@ -30,4 +30,4 @@ def test_capsys_log_decorator(capsys: CaptureFixture[str]) -> None:
 
     minus_number(100, 50, 30, 20)
     captured = capsys.readouterr()
-    assert captured.out == '0\nminus_number ok\n'
+    assert captured.out == "0\nminus_number ok\n"
