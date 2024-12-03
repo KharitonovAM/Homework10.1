@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import requests
 
 def get_exchange(amount, frm):
-    '''Принимает на вход сумму и валюту, возвращает сумму в рублях'''
+    '''Принимает на вход сумму и валюту, возвращает информацию по конверсии'''
 
     load_dotenv()
     my_api = os.getenv('ApiKey')
@@ -15,5 +15,13 @@ def get_exchange(amount, frm):
         "apikey": my_api
     }
     response = requests.request("GET", url, headers=headers, data=payload)
-    repos = response.json()
-    return repos['result']
+    data_base = response.json()
+    return data_base
+
+def take_summ_in_ruble(data):
+    '''Получает данные, полученные через API и возвращает знвчение коверсии в рублях'''
+    return data['result']
+
+l = get_exchange(100,'ddd')
+print(l)
+

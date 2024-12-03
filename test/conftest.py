@@ -108,3 +108,7 @@ def card_dannie_info():
 @pytest.fixture
 def string_data():
     return ['testfile.json','"string1=some_data"']
+
+@pytest.fixture
+def database_from_api():
+    return {'info':['data1', 'info2', 'info3'], 'result':100000}
