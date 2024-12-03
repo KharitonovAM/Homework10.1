@@ -20,8 +20,6 @@ def get_exchange(amount, frm):
 
 def take_summ_in_ruble(data):
     '''Получает данные, полученные через API и возвращает знвчение коверсии в рублях'''
-    return data['result']
+    return float(data['result'])
 
-l = get_exchange(100,'ddd')
-print(l)
 
