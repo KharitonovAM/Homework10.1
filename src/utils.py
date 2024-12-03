@@ -7,7 +7,7 @@ def take_data_from_json(to_json_file = '../data/operations.json' ):
     try:
         with open(to_json_file, encoding='utf-8') as f:
             data = json.load(f)
-    except FileNotFoundError:
+    except (FileNotFoundError):
         data = []
     if isinstance(data, list) is False:
         data = []

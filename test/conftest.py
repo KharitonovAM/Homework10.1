@@ -104,3 +104,7 @@ def card_dannie_info():
             "0000 0000 0000 0005",
         ],
     ]
+
+@pytest.fixture
+def string_data():
+    return ['testfile.json','"string1=some_data"']
