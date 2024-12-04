@@ -1,7 +1,7 @@
 import os
-
 import requests
 from dotenv import load_dotenv
+from typing import Union, Any
 
 
 def get_exchange(amount, frm):
@@ -18,6 +18,6 @@ def get_exchange(amount, frm):
     return data_base
 
 
-def take_summ_in_ruble(data):
+def take_summ_in_ruble(data:dict[Any,Any])->float:
     """Получает данные, полученные через API и возвращает знвчение коверсии в рублях"""
     return float(data["result"])
