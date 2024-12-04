@@ -1,5 +1,4 @@
 import json
-from unittest.mock import Mock
 
 from src.external_api import get_exchange, take_summ_in_ruble
 
