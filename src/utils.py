@@ -1,5 +1,6 @@
 import json
 from src.external_api import take_summ_in_ruble, get_exchange
+from unittest.mock import Mock
 
 def take_data_from_json(to_json_file = '../data/operations.json' ):
     '''принимает на вход путь до JSON-файла возвращает список словарей с данными.

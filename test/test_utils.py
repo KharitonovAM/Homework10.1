@@ -1,7 +1,10 @@
 import pytest
-from src.utils import take_data_from_json
+
+import src.utils
+from src.utils import take_data_from_json, get_amount_in_rub
+from unittest.mock import Mock, patch
+
 import os
-import json
 
 
 def test_with_bad_filename():
@@ -26,3 +29,14 @@ def test_empty_file_2():
 
 def test_not_list_result(string_data):
     assert take_data_from_json(string_data[0]) == []
+
+def test_get_amount_to_ruble(dict_rub):
+    assert get_amount_in_rub(dict_rub[0]) == dict_rub[1]
+
+@patch('src.utils.get_exchange')
+def test_mock_get_amount_in_rub(moke_exchange):
+    moke_exchange.return_value = {'success': True, 'query': {'from': 'USD', 'to': 'RUB', 'amount': 8221.37}, 'info': {'timestamp': 1733334184, 'rate': 105.005506}, 'date': '2024-12-04', 'result': 863289.116863}
+    assert src.utils.take_summ_in_ruble(src.utils.get_exchange(13123,'usd')) == 863289.116863
+
+
+

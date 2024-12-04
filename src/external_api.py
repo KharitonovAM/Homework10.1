@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 import requests
 
+
 def get_exchange(amount, frm):
     '''Принимает на вход сумму и валюту, возвращает информацию по конверсии'''
 
@@ -21,5 +22,6 @@ def get_exchange(amount, frm):
 def take_summ_in_ruble(data):
     '''Получает данные, полученные через API и возвращает знвчение коверсии в рублях'''
     return float(data['result'])
+
 
 
