@@ -105,18 +105,41 @@ def card_dannie_info():
         ],
     ]
 
+
 @pytest.fixture
 def string_data():
-    return ['testfile.json','"string1=some_data"']
+    return ["testfile.json", '"string1=some_data"']
+
 
 @pytest.fixture
 def database_from_api():
-    return {'info':['data1', 'info2', 'info3'], 'result':100000}
+    return {"info": ["data1", "info2", "info3"], "result": 100000}
+
 
 @pytest.fixture
 def dict_rub():
-    return [{'id': 667307132, 'state': 'EXECUTED', 'date': '2019-07-13T18:51:29.313309', 'operationAmount': {'amount': '97853.86', 'currency': {'name': 'руб.', 'code': 'RUB'}}, 'description': 'Перевод с карты на счет', 'from': 'Maestro 1308795367077170', 'to': 'Счет 96527012349577388612'},'97853.86']
+    return [
+        {
+            "id": 667307132,
+            "state": "EXECUTED",
+            "date": "2019-07-13T18:51:29.313309",
+            "operationAmount": {
+                "amount": "97853.86",
+                "currency": {"name": "руб.", "code": "RUB"},
+            },
+            "description": "Перевод с карты на счет",
+            "from": "Maestro 1308795367077170",
+            "to": "Счет 96527012349577388612",
+        },
+        "97853.86",
+    ]
+
 
 @pytest.fixture
 def dict_usd():
-    return {'operationAmount': {'amount': '97853.86', 'currency': {'name': 'USD.', 'code': 'USD'}}}
+    return {
+        "operationAmount": {
+            "amount": "97853.86",
+            "currency": {"name": "USD.", "code": "USD"},
+        }
+    }
