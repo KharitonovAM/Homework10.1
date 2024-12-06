@@ -47,23 +47,23 @@ def test_capsys_error_decorator(capsys: CaptureFixture[str]) -> None:
 
 
 def test_write_to_file():
-    @log("test_log.txt")
+    @log("data/test_log.txt")
     def mytest_add_number(a, b):
         return a + b
 
     mytest_add_number(5, 8)
-    with open("test_log.txt", "r") as f:
+    with open("data/test_log.txt", "r") as f:
         test_data = f.readlines()
     assert test_data[-1] == "mytest_add_number ok\n"
 
 
 def test_write_error_to_file():
-    @log("test_log.txt")
+    @log("data/test_log.txt")
     def mytest_add_number(a, b):
         return a + b
 
     mytest_add_number(5, ["123", "123"])
-    with open("test_log.txt", "r") as f:
+    with open("data/test_log.txt", "r") as f:
         test_data = f.readlines()
     assert (
         test_data[-1]
