@@ -14,7 +14,7 @@ def get_mask_card_number(number_card: Union[int, str]) -> str:
     """Функция получает на входе номер карты,
     возвращает строковое значение где цифры разбиты в группы по 4 и все
     кроме первых 6-ти и последних 4-х цифрах карыты заменены на *"""
-    masks_logging.info("Запуск функции  get_mask_card_number")
+    masks_logging.debug("Запуск функции  get_mask_card_number")
 
     mask_card = []
     number_card = str(number_card)

@@ -22,10 +22,10 @@ def take_data_from_json(to_json_file="../data/operations.json"):
             utils_logging.debug("Получили данные из файла")
             data = json.load(f)
     except FileNotFoundError:
-        utils_logging.warning("файл не найден")
+        utils_logging.error("файл не найден")
         data = []
     if isinstance(data, list) is False:
-        utils_logging.warning("Тип переменной не список")
+        utils_logging.error("Тип переменной не список")
         data = []
     return data
 
