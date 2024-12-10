@@ -14,7 +14,7 @@ def test_api_mistake():
         get_exchange(100000)
 
 
-'''@pytest.mark.parametrize("sum,valuta", [(10000, "aaa")])
+"""@pytest.mark.parametrize("sum,valuta", [(10000, "aaa")])
 def test_with_wrong_data(sum, valuta):
     assert get_exchange(sum, valuta) == {
         "error": {
@@ -22,7 +22,7 @@ def test_with_wrong_data(sum, valuta):
             "message": 'You have entered an invalid "from" property. [Example: '
             "from=EUR]",
         }
-    }'''
+    }"""
 
 
 @patch("requests.request")
