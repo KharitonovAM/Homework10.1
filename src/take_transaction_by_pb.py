@@ -1,8 +1,8 @@
 import csv
 import pandas as pd
+from typing import Any
 
-
-def take_transactions_from_csv(filename):
+def take_transactions_from_csv(filename:str)->list[dict[Any,Any]]:
     """Функция для считывания финансовых операций из CSV выдает список словарей с транзакциями"""
     with open(filename, encoding="utf-8") as f:
         data = csv.DictReader(f, delimiter=";")
@@ -10,7 +10,7 @@ def take_transactions_from_csv(filename):
     return data_list
 
 
-def take_transactions_from_exel(filename):
+def take_transactions_from_exel(filename:str)->list[dict[Any,Any]]:
     """Функция для считывания финансовых операций из EXEL выдает список словарей с транзакциями"""
     exel_data = pd.read_excel(filename)
     return exel_data.to_dict("records")
