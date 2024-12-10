@@ -1,7 +1,6 @@
-2024-12-10 17:55:32,711 - DEBUG- mask_account - Функция get_mask_account
-2024-12-10 17:55:32,712 - DEBUG- masks_logging - Запуск функции  get_mask_card_number
-2024-12-10 17:55:32,712 - DEBUG- masks_logging - Переходим к обработке номера карты get_mask_card_number
-2024-12-10 17:55:32,712 - DEBUG- masks_logging - Завершена обработка номера карты get_mask_card_number
-2024-12-10 17:55:32,712 - DEBUG- masks_logging - Переходи к разбивке по блокам по 4 цифры в get_mask_card_number
-2024-12-10 17:55:32,712 - INFO- masks_logging - Это блок инфо
-2024-12-10 17:55:32,712 - DEBUG- masks_logging - Завершание работы функции get_mask_card_number
+2024-12-10 18:15:45,748 - DEBUG- masks_logging - Запуск функции  get_mask_card_number
+2024-12-10 18:15:45,748 - DEBUG- masks_logging - Переходим к обработке номера карты get_mask_card_number
+2024-12-10 18:15:45,749 - DEBUG- masks_logging - Завершена обработка номера карты get_mask_card_number
+2024-12-10 18:15:45,749 - DEBUG- masks_logging - Переходи к разбивке по блокам по 4 цифры в get_mask_card_number
+2024-12-10 18:15:45,749 - INFO- masks_logging - Это блок инфо
+2024-12-10 18:15:45,749 - DEBUG- masks_logging - Завершание работы функции get_mask_card_number
