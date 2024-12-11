@@ -6,7 +6,10 @@ from dotenv import load_dotenv
 
 
 def get_exchange(amount, frm):
-    """Принимает на вход сумму и валюту, возвращает информацию по конверсии"""
+    """Принимает на вход сумму и валюту, возвращает информацию по конвертации в виде списка
+    сумма - int
+    валюта - str
+    return list[dict[Any, Any]]"""
 
     load_dotenv()
     my_api = os.getenv("ApiKey")
@@ -20,5 +23,6 @@ def get_exchange(amount, frm):
 
 
 def take_summ_in_ruble(data: dict[Any, Any]) -> float:
-    """Получает данные, полученные через API и возвращает знвчение коверсии в рублях"""
+    """Получает данные, полученные через API и возвращает знвчение коверсии в рублях
+    получает список из словарей, взвращает чисо в float"""
     return float(data["result"])
