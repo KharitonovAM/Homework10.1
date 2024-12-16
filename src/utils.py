@@ -5,10 +5,11 @@ from src.external_api import get_exchange, take_summ_in_ruble
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format="(%asctime)s- %(levelname)s- (%name)s-%(message)s",
-    filename="logs/utils.log",
+    format="%(asctime)s - %(levelname)s- %(name)s - %(message)s",
+    filename="../logs/utils.log",
     filemode="w",
 )
+
 utils_logging = logging.getLogger("utils_logging")
 
 
