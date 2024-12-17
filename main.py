@@ -53,7 +53,11 @@ def main()->None:
 
         only_rub = input('Выводить только рублевые тразакции? Да/Нет\n')
         if only_rub.upper() == 'ДА':
-            data_list = filter_by_currency(data_list,'RUB')
+            data_list = filter_by_currency(data_list,'руб.')
+            print('------------------------------')
+            for i in data_list:
+                print(i)
+            print('------------------------------')
 
         word_description = input('Отфильтровать список транзакций по определенному слову в описании? Да/Нет\n')
         if word_description.upper() == 'ДА':

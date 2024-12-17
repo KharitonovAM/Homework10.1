@@ -7,6 +7,10 @@ from main import main
 def test_main(mock_input):
     main()
 
-@patch('main.input', side_effect=['1', 'таркан', 'executed', 'да', 'по возрастанию', "нет", "нет"])
-def test_main(mock_input):
+@patch('main.input', side_effect=['1', 'таракан', 'executed', 'да', 'по возрастанию', "нет", "нет"])
+def test_main2(mock_input):
+    main()
+
+@patch('main.input', side_effect=['2', 'executed', 'нет', "нет", "нет"])
+def test_main3(mock_input):
     main()

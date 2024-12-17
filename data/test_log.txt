@@ -131,3 +131,7 @@ mytest_add_number ok
 mytest_add_number error: unsupported operand type(s) for +: 'int' and 'list'. Inputs: (5, ['123', '123']), {}
 mytest_add_number ok
 mytest_add_number error: unsupported operand type(s) for +: 'int' and 'list'. Inputs: (5, ['123', '123']), {}
+mytest_add_number ok
+mytest_add_number error: unsupported operand type(s) for +: 'int' and 'list'. Inputs: (5, ['123', '123']), {}
+mytest_add_number ok
+mytest_add_number error: unsupported operand type(s) for +: 'int' and 'list'. Inputs: (5, ['123', '123']), {}
