@@ -4,10 +4,8 @@ from unittest.mock import patch
 import pandas as pd
 import pytest
 
-from src.take_transaction_by_pb import (
-    take_transactions_from_csv,
-    take_transactions_from_exel,
-)
+from src.take_transaction_by_pb import (take_transactions_from_csv,
+                                        take_transactions_from_exel)
 
 
 @patch(

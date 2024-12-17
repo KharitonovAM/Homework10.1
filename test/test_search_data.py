@@ -1,4 +1,5 @@
 import pytest
+
 from src.search_data import make_dict_category, search_transaction_by_string
 
 
