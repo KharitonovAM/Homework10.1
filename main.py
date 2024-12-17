@@ -26,7 +26,6 @@ def main()->None:
         print('Вы сделали не правильный выбор, извините, работа программы прервана')
     else:
         print(f'Для обработки выбран {list_file[type_file]}')
-        file_name = file_name_dict[list_file[type_file]]
         if type_file == '1':
             data_list = take_data_from_json(file_name_dict[list_file[type_file]])
         if type_file == '2':
