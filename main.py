@@ -22,7 +22,7 @@ def main() -> None:
         "CSV-файл": "data/transactions.csv",
         "XLSX-файл": "data/transactions_excel.xlsx",
     }
-    start_text = """Привет! Добро пожаловать в программу работы с банковскими транзакциями. 
+    start_text = """Привет! Добро пожаловать в программу работы с банковскими транзакциями.
     Выберите необходимый пункт меню:
     1. Получить информацию о транзакциях из JSON-файла
     2. Получить информацию о транзакциях из CSV-файла
@@ -94,7 +94,7 @@ def main() -> None:
                     print(
                         f"Сумма: {item['operationAmount']['amount']} {item['operationAmount']['currency']['name']}\n"
                     )
-                except:
+                except Exception:
                     continue
 
 
